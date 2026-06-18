@@ -1,69 +1,9 @@
 <mxfile host="app.diagrams.net">
   <diagram name="第 1 页" id="sSmykQXUnwYg9KAfzTBA">
-    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" adaptiveColors="auto">
+    <mxGraphModel dx="1193" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" adaptiveColors="auto">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="c1" value="输入视频帧 (Input Frames)" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#cccccc;html=1;fontStyle=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="180" height="380" as="geometry" />
-        </mxCell>
-        <mxCell id="f1" value="&lt;b&gt;视频帧 t-1&lt;/b&gt;&lt;br&gt;Frame t-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#b3e5fc;" vertex="1" parent="c1">
-          <mxGeometry x="20" y="50" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="f2" value="&lt;b&gt;视频帧 t&lt;/b&gt;&lt;br&gt;Frame t" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#b3e5fc;" vertex="1" parent="c1">
-          <mxGeometry x="20" y="160" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="f3" value="&lt;b&gt;视频帧 t+1&lt;/b&gt;&lt;br&gt;Frame t+1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#b3e5fc;" vertex="1" parent="c1">
-          <mxGeometry x="20" y="270" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="c2" value="空间特征提取 (Spatial CNN)" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#cccccc;html=1;fontStyle=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="280" y="40" width="180" height="380" as="geometry" />
-        </mxCell>
-        <mxCell id="cnn1" value="&lt;b&gt;2D/3D CNN&lt;/b&gt;&lt;br&gt;特征提取 (t-1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="c2">
-          <mxGeometry x="20" y="50" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="cnn2" value="&lt;b&gt;2D/3D CNN&lt;/b&gt;&lt;br&gt;特征提取 (t)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="c2">
-          <mxGeometry x="20" y="160" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="cnn3" value="&lt;b&gt;2D/3D CNN&lt;/b&gt;&lt;br&gt;特征提取 (t+1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="c2">
-          <mxGeometry x="20" y="270" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="c3" value="时序建模与分类 (Temporal &amp; Decision)" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#cccccc;html=1;fontStyle=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="520" y="40" width="540" height="380" as="geometry" />
-        </mxCell>
-        <mxCell id="temp" value="&lt;b&gt;时序特征融合&lt;/b&gt;&lt;br&gt;Temporal Fusion&lt;br&gt;(LSTM / Transformer / 3D-Conv)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="c3">
-          <mxGeometry x="30" y="135" width="160" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="cls" value="&lt;b&gt;动作分类器&lt;/b&gt;&lt;br&gt;Classifier&lt;br&gt;(FC + Softmax)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="c3">
-          <mxGeometry x="230" y="160" width="120" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="out" value="&lt;b&gt;识别结果 (Output)&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#d8000c&quot;&gt;&lt;b&gt;挥手 (Waving)&lt;/b&gt;&lt;/font&gt;&lt;br&gt;置信度: 98.5%" style="html=1;whiteSpace=wrap;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="c3">
-          <mxGeometry x="380" y="150" width="130" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="e1" edge="1" parent="1" source="f1" target="cnn1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="f2" target="cnn2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="f3" target="cnn3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e4" edge="1" parent="1" source="cnn1" target="temp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e5" edge="1" parent="1" source="cnn2" target="temp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e6" edge="1" parent="1" source="cnn3" target="temp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e7" edge="1" parent="1" source="temp" target="cls" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e8" edge="1" parent="1" source="cls" target="out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
